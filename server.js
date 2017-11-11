@@ -15,8 +15,10 @@ var express = require('express'),
 //Add route for root directory
 app.get('/', function (req, res) {
     res.send(page);
-    page = req.query.page;
-    console.log(req.query)
+    if (req.query.page != null) {
+        page = req.query.page;
+    }
+    //Add api logic here
 });
 
 //Start Application
